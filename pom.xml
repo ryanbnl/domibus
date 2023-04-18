@@ -6,7 +6,7 @@
 
     <groupId>eu.domibus</groupId>
     <artifactId>domibus</artifactId>
-    <version>5.1</version>
+    <version>5.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Domibus MSH</name>
     <modules>
@@ -168,15 +168,13 @@
         <hazelcast-all.version>4.2.7</hazelcast-all.version>
 
         <project.scm.id>edelivery-scm</project.scm.id>
-        <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version>
+        <maven-release-plugin.version>3.0.0</maven-release-plugin.version>
 
         <!-- For increased readability, please leave these Java properties at the very end -->
         <jdk.version>8</jdk.version>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <javassist.version>3.28.0-GA</javassist.version>
-        <project.scm.id>edelivery-scm</project.scm.id>
-        <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version>
     </properties>
 
     <scm>
@@ -1260,7 +1258,6 @@
                     <version>${maven-release-plugin.version}</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <tagNameFormat>@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -1473,7 +1470,6 @@
                     <version>${maven-release-plugin.version}</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <tagNameFormat>@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
             </plugins>
