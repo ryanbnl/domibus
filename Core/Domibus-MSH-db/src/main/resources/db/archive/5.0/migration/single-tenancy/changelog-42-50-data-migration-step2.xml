@@ -3,7 +3,7 @@
 <databaseChangeLog
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet author="Sebastian-Ion TINCU" id="EDELIVERY-9209-single-tenancy-prepare">
         <sqlFile path="src/main/resources/db/archive/5.0/migration/oracle/db-migration-drop-temporary-tables.sql" endDelimiter="\n/" dbms="oracle"/>

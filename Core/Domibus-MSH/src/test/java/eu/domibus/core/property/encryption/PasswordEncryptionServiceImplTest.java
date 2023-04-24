@@ -17,6 +17,7 @@ import mockit.integration.junit4.JMockit;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
 import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -825,8 +826,8 @@ public class PasswordEncryptionServiceImplTest {
 
     @SuppressWarnings("AccessStaticViaInstance")
     @Test
-    public void getReplacedLines_ok(@Mocked File configurationFile,
-                                    @Mocked Path path,
+    public void getReplacedLines_ok(@Injectable File configurationFile,
+                                    @Injectable Path path,
                                     @Mocked Files files) throws IOException {
         List<PasswordEncryptionResult> encryptedProperties = new ArrayList<>();
         List<String> lines = new ArrayList<>();
@@ -852,7 +853,7 @@ public class PasswordEncryptionServiceImplTest {
 
         List<String> replacedLines = passwordEncryptionService.getReplacedLines(encryptedProperties, configurationFile);
 
-        assertThat(replacedLines, CoreMatchers.hasItems(replacedLine1, replacedLine2));
+        MatcherAssert.assertThat(replacedLines, CoreMatchers.hasItems(replacedLine1, replacedLine2));
 
         new FullVerifications() {
         };
@@ -881,7 +882,7 @@ public class PasswordEncryptionServiceImplTest {
 
         final List<String> propertiesToEncrypt = passwordEncryptionService.getPropertiesToEncrypt(encryptedProperties, getPropertyFn);
         assertEquals(2, propertiesToEncrypt.size());
-        Assert.assertTrue(propertiesToEncrypt.contains(propertyName1));
-        Assert.assertTrue(propertiesToEncrypt.contains(propertyName2));
+        assertTrue(propertiesToEncrypt.contains(propertyName1));
+        assertTrue(propertiesToEncrypt.contains(propertyName2));
     }
 }
